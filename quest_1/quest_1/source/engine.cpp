@@ -8,6 +8,7 @@
 // local
 #include "Object.h"
 #include "GUI.h"
+using namespace std;
 
 int
 loadBlockData (
@@ -15,6 +16,17 @@ loadBlockData (
     Object p_objects[],
     const GUI& p_gui
 ) {
+    ifstream p_gameFile("game.txt");
+    int numberOfObjects = 0;
+    while (!p_gameFile.eof() && numberOfObjects < maxObjects) {
+
+        p_gameFile >> p_objects->type >> p_objects->position >> p_objects->dimensions >> p_objects->top
+            >> p_objects->spriteID;
+        ++numberOfObjects;
+    }
+    p_gameFile.close()
+
+
     /*
         -- loadBlockData   --
         Parameters:
