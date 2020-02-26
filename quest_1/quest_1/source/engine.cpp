@@ -24,7 +24,7 @@ loadBlockData (
              newPosition = (row + column) + (row * (column - 1));
             p_objects[newPosition];
             p_objects[newPosition].type;
-            p_objects[newPosition].dimensions = {p_gui.getObjectDimensions() };
+            p_objects[newPosition].dimensions = {p_gui.getObjectDimensions(p_objects[newPosition]) };
             p_objects[newPosition].position = { (column *p_objects[newPosition].dimensions.width) ,
                 ( row * p_objects[newPosition].dimensions.height)};
             newPosition++;
